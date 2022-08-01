@@ -1,3 +1,5 @@
 node_modules
 .env
-/public/html/
+/public/testHTML/
+/public/testCSS/
+/public/testJS/
