@@ -16,7 +16,7 @@ router.get('/dashboard', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['userName'],
         },
       ],
     });
