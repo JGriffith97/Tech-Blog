@@ -18,11 +18,35 @@ header, .project:not(:last-child) {
   text-decoration: underline;
 }
 
-.landing-container {
+.main-div {
   border: solid black 5px;
+  padding: 1% 2% 5% 2%;
 }
 
-.inner-landing-div {
+.inner-main-div {
   text-align: center;
-  padding: 20% 2% 20% 2%;
+  padding: 5% 2% 5% 2%;
+}
+
+.inner-login-div {
+  text-align: center;
+  margin-bottom: 3%;
+  border-bottom: 2px solid black;
+  padding: 1%;
+}
+
+.row-holder {
+  display: flex;
+}
+
+.login-area {
+  width: 100%;
+  padding: 1% 8% 1% 8%;
+  border-right: solid 1px black;
+}
+
+.signup-area {
+  width: 100%;
+  padding: 1% 8% 1% 8%;
+  border-left: solid 1px black;
 }

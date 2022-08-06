@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "postTitle": "GPUs are hard to come by",
+    "postBody": "*sigh* freaking crypto-miners.",
+    "user_id": "1"
+  },
+  {
+    "id": "2",
+    "postTitle": "New CPUs?",
+    "postBody": "Buddy of mine keeps talking about the new gens coming up soon.",
+    "user_id": "2"
+  },
+  {
+    "id": "3",
+    "postTitle": "Terrible luck.",
+    "postBody": "The last 3 monitor's I've gotten have had dead pixels.",
+    "user_id": "1"
+  }
+]
