@@ -52,10 +52,14 @@ router.get('/post/:id', async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render('post', {
-      ...post,
-      logged_in: req.session.logged_in
-    });
+    if (req.session.logged_in) {
+      res.render('post', {
+        ...post,
+        logged_in: req.session.logged_in
+      });
+    } else {
+      res.redirect('/login')
+    }
   } catch (err) {
     res.status(500).json(err);
   }

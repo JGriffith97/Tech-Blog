@@ -87,6 +87,11 @@ header, .project:not(:last-child) {
   display: flex;
 }
 
+input[type="text"] {
+  font-size: 16px;
+  line-height: 1.3rem;
+}
+
 .edit-btn {
   margin: 1%;
   width: 50%;
@@ -95,4 +100,11 @@ header, .project:not(:last-child) {
 .delete-btn {
   margin: 1%;
   width: 50%;
+}
+
+.user-note {
+  text-align: center;
+  margin: 0;
+  font-style: italic;
+  opacity: 50%;
 }
