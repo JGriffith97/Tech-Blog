@@ -42,24 +42,38 @@ header, .project:not(:last-child) {
 .login-area {
   width: 100%;
   padding: 1% 8% 1% 8%;
-  border-right: solid 1px black;
 }
 
 .signup-area {
   width: 100%;
   padding: 1% 8% 1% 8%;
-  border-left: solid 1px black;
-}
-
-.dashboard-main {
-
+  border-left: solid 2px black;
 }
 
 .dashboard-sub {
   border: 4px solid black;
   padding: 0.625rem;
+  margin-bottom: 1%;
 }
 
 .dashboard-header {
   text-align: center;
+}
+
+.post-header {
+  padding: 1px 0 1px 0;
+}
+
+.post-body {
+  padding: 1%;
+}
+
+.post-footer {
+  padding: 1%;
+  font-style: italic;
+  opacity: 50%;
+}
+
+.btn.custom-btn {
+  background-color: #082b50;
 }
