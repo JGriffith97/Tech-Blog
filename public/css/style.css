@@ -50,6 +50,10 @@ header, .project:not(:last-child) {
   border-left: solid 2px black;
 }
 
+.login-btn {
+  width: 100%;
+}
+
 .dashboard-sub {
   border: 4px solid black;
   padding: 0.625rem;
@@ -76,4 +80,19 @@ header, .project:not(:last-child) {
 
 .btn.custom-btn {
   background-color: #082b50;
+  cursor: pointer;
+}
+
+.btn-field {
+  display: flex;
+}
+
+.edit-btn {
+  margin: 1%;
+  width: 50%;
+}
+
+.delete-btn {
+  margin: 1%;
+  width: 50%;
 }

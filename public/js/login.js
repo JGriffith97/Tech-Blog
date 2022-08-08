@@ -2,10 +2,13 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
-  const userName = document.querySelector('#username-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  let userName = document.querySelector('#username-login').value
+  let password = document.querySelector('#password-login').value
 
-  if (userName && password) {
+  if (userName && password !== null) {
+    userName.trim();
+    password.trim();
+
     // Send a POST request to the API endpoint
     const response = await fetch('/api/users/login', {
       method: 'POST',
@@ -15,10 +18,12 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
+  } else {
+    alert('All login areas must have content!')
   }
 };
 
@@ -41,12 +46,12 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
   } else {
-    alert('All areas must have content!')
+    alert('All signup areas must have content!')
   }
 };
 

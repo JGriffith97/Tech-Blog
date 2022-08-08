@@ -1,5 +1,10 @@
-<div class="main-div">
-  <div class="inner-main-div">
-    <h1>Welcome to the Tech Blog!</h1>
+<div class="dashboard-main container-fluid px-2">
+  {{#each posts as |post|}}
+  <div class="dashboard-sub container px-2">
+    <div class="post-header"><h2 class="dashboard-header">{{postTitle}}</h2></div>
+    <hr>
+    <div class="post-body">{{postBody}}</div>
+    <hr>
+    <div class="post-footer">Posted by {{user.userName}} on {{format_date date_created}}</div>
   </div>
-</div>
+  {{/each}}
