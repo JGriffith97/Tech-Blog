@@ -78,7 +78,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['id']
+          attributes: ['userName']
         },
       ],
     });
@@ -100,7 +100,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
 
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/profile');
+    res.redirect('/dashboard');
     return;
   }
 

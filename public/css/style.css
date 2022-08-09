@@ -108,3 +108,17 @@ input[type="text"] {
   font-style: italic;
   opacity: 50%;
 }
+
+.dash-welcome {
+  text-align: center;
+}
+
+.comments {
+  margin-top: 1%;
+  border-top: solid 2px black;
+}
+
+.comments-header {
+  margin-top: 1%;
+  text-align: center;
+}

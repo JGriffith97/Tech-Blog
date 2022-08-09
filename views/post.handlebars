@@ -4,6 +4,9 @@
     <hr>
     <div class="post-body" contenteditable="false">{{postBody}}</div>
     <hr>
-    <div class="post-footer">Posted on {{format_date date_created}}</div>
+    <div class="post-footer">Posted by {{user.userName}} on {{format_date date_created}}</div>
+    <div class="comments">
+      <h5 class="comments-header">Comments:</h5>
+    </div>
   </div>
 </div>

@@ -1,4 +1,6 @@
 <div class="dashboard-main container-fluid px-2">
+  <div class="dashboard-sub container px-2"><h1 class="dash-welcome">Welcome to your dashboard!</h1></div>
+  {{#if posts.length}}
   {{#each posts as |post|}}
   <div class="dashboard-sub container px-2">
     <div class="post-header"><a class="post-link" href="/dashboard/user-post/{{id}}"><h2 class="dashboard-header">{{postTitle}}</h2></a></div>
@@ -8,4 +10,5 @@
     <div class="post-footer">Posted on {{format_date date_created}}</div>
   </div>
   {{/each}}
+  {{/if}}
 </div>
