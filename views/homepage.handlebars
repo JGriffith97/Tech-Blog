@@ -1,7 +1,7 @@
 <div class="dashboard-main container-fluid px-2">
   {{#each posts as |post|}}
   <div class="dashboard-sub container px-2">
-    <div class="post-header"><h2 class="dashboard-header">{{postTitle}}</h2></div>
+    <div class="post-header"><a href="/post/{{post.id}}"><h2 class="dashboard-header">{{postTitle}}</h2></a></div>
     <hr>
     <div class="post-body">{{postBody}}</div>
     <hr>

@@ -39,23 +39,56 @@ router.get('/dashboard', withAuth, async (req, res) => {
         logged_in: true
       });
     } else {
-      res.redirect('login')
+      res.redirect('/login')
     }
   } catch (err) {
     res.status(500).json(err)
   }
 });
 
-router.get('/post/:id', async (req, res) => {
+router.get('/dashboard/user-post/:id', withAuth, async (req, res) => {
   try {
-    const postData = await Post.findByPk(req.params.id);
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['id']
+        },
+      ],
+    });
+
+    const post = postData.get({ plain: true });
+
+    if (req.session.logged_in) {
+      res.render('user-post', {
+        ...post,
+        logged_in: req.session.logged_in,
+      });
+    } else {
+      res.redirect('/login')
+    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/post/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['id']
+        },
+      ],
+    });
 
     const post = postData.get({ plain: true });
 
     if (req.session.logged_in) {
       res.render('post', {
         ...post,
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
       });
     } else {
       res.redirect('/login')
