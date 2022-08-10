@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "commentBody": "Yeah, that and the chip shortage. Unfortunate.",
+    "post_id": 1,
+    "user_id": 2
+  },
+  {
+    "id": 2,
+    "commentBody": "And it's not getting better anytime soon.",
+    "post_id": 1,
+    "user_id": 2
+  },
+  {
+    "id": 3,
+    "commentBody": "Something about new infrastructure, right?",
+    "post_id": 2,
+    "user_id": 1
+  }
+]

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User } = require('../models');
+const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -8,9 +8,9 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['userName']
+          attributes: {exclude: ['password']}
         }
-      ]
+      ],
     });
 
     const posts = postData.map((post) => post.get({plain: true}));
@@ -52,7 +52,7 @@ router.get('/dashboard/user-post/:id', withAuth, async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['id']
+          attributes: {exclude: ['password']}
         },
       ],
     });
@@ -72,13 +72,38 @@ router.get('/dashboard/user-post/:id', withAuth, async (req, res) => {
   }
 });
 
+router.get('/dashboard/comments/:id', withAuth, async (req, res) => {
+  try {
+    const commentData = await Comment.findByPk(req.params.id, {
+      include: [
+        {
+          model: Post
+        },
+      ]
+    })
+  } catch (err) {
+    
+  }
+})
+
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['userName']
+          attributes: {exclude: ['password']}
+        },
+        {
+          model: Comment,
+          attributes: ['commentBody', 'date_posted'],
+          include: [
+            {
+              model: User,
+              attributes: ['userName'],
+              exclude: ['password']
+            },
+          ],
         },
       ],
     });
@@ -95,6 +120,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
     }
   } catch (err) {
     res.status(500).json(err);
+    console.log(err);
   }
 });
 
