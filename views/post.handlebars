@@ -9,7 +9,7 @@
       <div class="comments">
         <h5 class="comments-header">Comments:</h5>
         {{#each comments as |comment|}}
-          <p class="one-comment"><h6>{{user.userName}}: </h6><span>{{comment.commentBody}}</span></p>
+          <p class="one-comment"><h6>{{user.userName}}: </h6><span id="comment-text" class="comment-self" data-value={{user.id}} {{!-- contenteditable="true" --}}>{{comment.commentBody}}</span></p>
         {{/each}}
       </div>
       {{/if}}
