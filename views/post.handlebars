@@ -10,12 +10,11 @@
         <h5 class="comments-header">Comments:</h5>
         {{#each comments as |comment|}}
           <p class="one-comment"><h6>{{user.userName}}: </h6><span>{{comment.commentBody}}</span></p>
-          <hr class="divider">
         {{/each}}
       </div>
       {{/if}}
       {{#if logged_in}}
-      <form>
+      <form class="comment-form">
         <div class="create-comment">
           <textarea class="comment-area"></textarea>
         </div>
@@ -24,3 +23,5 @@
     {{/if}}
   </div>
 </div>
+
+<script src="/js/comment.js"></script>
