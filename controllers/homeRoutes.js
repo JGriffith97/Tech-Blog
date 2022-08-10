@@ -86,7 +86,7 @@ router.get('/dashboard/comments/:id', withAuth, async (req, res) => {
   }
 })
 
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/post/:id', async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       include: [
@@ -110,14 +110,10 @@ router.get('/post/:id', withAuth, async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    if (req.session.logged_in) {
-      res.render('post', {
-        ...post,
-        logged_in: req.session.logged_in,
-      });
-    } else {
-      res.redirect('/login')
-    }
+    res.render('post', {
+      ...post,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
     console.log(err);
