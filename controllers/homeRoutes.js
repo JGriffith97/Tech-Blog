@@ -91,17 +91,11 @@ router.get('/dashboard/user-post/:id', withAuth, async (req, res) => {
   }
 });
 
-router.get('/dashboard/comments/:id', withAuth, async (req, res) => {
+router.get('/dashboard/new-post', withAuth, async (req, res) => {
   try {
-    const commentData = await Comment.findByPk(req.params.id, {
-      include: [
-        {
-          model: Post
-        },
-      ]
-    })
+    res.render('new-post')
   } catch (err) {
-    
+    res.status(500).json(err)
   }
 })
 
