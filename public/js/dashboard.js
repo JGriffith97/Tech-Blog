@@ -15,8 +15,8 @@ const deleteBtnHandler = async (event) => {
 };
 
 
-const buttons = document.querySelectorAll('.dlt-com-btn');
+const delButtons = document.querySelectorAll('.dlt-com-btn');
 
-for (let i = 0; i < buttons.length; i++) {
-  buttons[i].addEventListener('click', deleteBtnHandler)
+for (let i = 0; i < delButtons.length; i++) {
+  delButtons[i].addEventListener('click', deleteBtnHandler)
 }
