@@ -1,8 +1,10 @@
 <div class="dashboard-main container-fluid px-2">
-  <div class="dashboard-sub container px-2"><h1 class="dash-welcome">Welcome to your dashboard {{userName}}!</h1></div>
+  <div class="dashboard-sub container px-2">
+    <h1 class="dash-welcome">Welcome to your dashboard {{userName}}!</h1>
+  </div>
   {{#if posts.length}}
   {{#each posts as |post|}}
-  <div class="dashboard-sub container px-2">
+  <div class="dashboard-sub-1 container px-2">
     <div class="post-header"><a class="post-link" href="/dashboard/user-post/{{id}}"><h2 class="dashboard-header">{{postTitle}}</h2></a></div>
     <hr>
     <div class="post-body">{{postBody}}</div>
@@ -11,6 +13,9 @@
   </div>
   {{/each}}
   {{/if}}
+  <div class="container button-container">
+    <button class="new-post-btn custom-btn btn btn-primary">New Post</button>
+  </div>
   {{#if comments.length}}
   <div class="dashboard-sub container px-2">
     <div class="post-header"><h2 class="dashboard-header">Comments</h2>

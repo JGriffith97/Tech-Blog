@@ -60,6 +60,11 @@ header, .project:not(:last-child) {
   margin-bottom: 1%;
 }
 
+.dashboard-sub-1 {
+  border: 4px solid black;
+  padding: 0.625rem;
+}
+
 .dashboard-header {
   text-align: center;
 }
@@ -156,6 +161,14 @@ input[type="text"] {
 .comment-group {
   border: 2px gray solid;
   padding: 1%;
+}
+
+.button-container {
+  margin: 1% auto 1% auto;
+}
+
+.new-post-btn {
+  width: 100%;
 }
 
 .dlt-com-btn {
