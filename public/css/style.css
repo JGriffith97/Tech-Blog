@@ -137,8 +137,13 @@ input[type="text"] {
 .dash-note {
   margin: 0;
   font-style: italic;
-  opacity: 50%;
   font-size: 16px;
+  color: hsla(34, 78%, 91%, 0.500)
+}
+
+.dash-note > a {
+  font-style: normal;
+  font-weight: 500;
 }
 
 .comment-group {
@@ -149,14 +154,23 @@ input[type="text"] {
 }
 
 .comment-group {
-  border: 2px lime solid;
+  border: 2px gray solid;
+  padding: 1%;
 }
 
 .dlt-com-btn {
-  min-width: 10%;
+  max-width: 20%;
   position: absolute;
-  right: 3%;
-  top: 20%;
+  right: 20px;
+  top: 30%;
+  overflow-x: visible;
+}
+
+.edit-com-btn {
+  max-width: 20%;
+  position: absolute;
+  right: 115px;
+  top: 30%;
   overflow-x: visible;
 }
 
@@ -171,5 +185,16 @@ input[type="text"] {
     top: 0;
     position: relative;
     overflow-x: visible;
+  }
+
+  .comment-group > .btn {
+    margin-top: 1%;
+  }
+
+  .edit-com-btn {
+    min-width: 100%;
+    right: 0;
+    top: 0;
+    position: relative;
   }
 }

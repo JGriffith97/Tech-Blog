@@ -16,12 +16,16 @@
     <div class="post-header"><h2 class="dashboard-header">Comments</h2>
   {{#each comments as |comment|}}
     <div class="comment-group">
-      <h6>{{user.userName}}: </h6><span>{{comment.commentBody}}</span>
-      <p class="dash-note">Posted on: {{format_date comment.date_posted}}</p>
+      <h6>{{user.userName}}: </h6>
+      <span class="comment-body" contenteditable="true">{{comment.commentBody}}</span>
+      <p class="dash-note">Posted on: {{format_date comment.date_posted}} @ <a href="/post/{{post.id}}">{{post.postTitle}}</a></p>
+      <button class="edit-com-btn custom-btn btn btn-primary" data-id="{{comment.id}}">Edit</button>
       <button class="dlt-com-btn custom-btn btn btn-primary" data-id="{{comment.id}}">Delete</button>
+      {{!-- Probably want to go in and make these flex at some point. --}}
     </div>
   {{/each}}
     </div>
+    <p class="user-note">Comments can be freely edited on this page, and saved by clicking the 'Edit' button.</p>
   </div>
   {{/if}}
 </div>
