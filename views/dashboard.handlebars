@@ -1,5 +1,5 @@
 <div class="dashboard-main container-fluid px-2">
-  <div class="dashboard-sub container px-2"><h1 class="dash-welcome">Welcome to your dashboard!</h1></div>
+  <div class="dashboard-sub container px-2"><h1 class="dash-welcome">Welcome to your dashboard {{userName}}!</h1></div>
   {{#if posts.length}}
   {{#each posts as |post|}}
   <div class="dashboard-sub container px-2">
@@ -11,4 +11,19 @@
   </div>
   {{/each}}
   {{/if}}
+  {{#if comments.length}}
+  <div class="dashboard-sub container px-2">
+    <div class="post-header"><h2 class="dashboard-header">Comments</h2>
+  {{#each comments as |comment|}}
+    <div class="comment-group">
+      <h6>{{user.userName}}: </h6><span>{{comment.commentBody}}</span>
+      <p class="dash-note">Posted on: {{format_date comment.date_posted}}</p>
+      <button class="dlt-com-btn custom-btn btn btn-primary" data-id="{{comment.id}}">Delete</button>
+    </div>
+  {{/each}}
+    </div>
+  </div>
+  {{/if}}
 </div>
+
+<script src="/js/dashboard.js"></script>
