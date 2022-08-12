@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
 
 router.get('/dashboard', withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.user.id, {
       attributes: { exclude: ['password'] },
       include: [
         {
@@ -34,7 +34,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
         },
         {
           model: Comment,
-          attributes: ['id' ,'commentBody', 'date_posted', 'user_id'],
+          attributes: ['id', 'commentBody', 'date_posted', 'user_id'],
           include: [
             {
               model: User,
@@ -42,7 +42,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
             },
             {
               model: Post,
-              attributes: ['id' ,'postTitle']
+              attributes: ['id', 'postTitle']
             }
           ]
         },
