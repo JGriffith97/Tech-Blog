@@ -1,6 +1,6 @@
 # Tech Blog
 
-[![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)]
+![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)
 
 # Table of Contents
 
