@@ -34,6 +34,7 @@ const editBtnHandler = async (event) => {
   }
 }
 
+
 const editButtons = document.querySelectorAll('.edit-com-btn');
 for (let i = 0; i < editButtons.length; i++) {
   editButtons[i].addEventListener('click', editBtnHandler);
