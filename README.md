@@ -14,6 +14,10 @@
 
 This is a full-stack application serving as a tech blog. It was created using Node.js, mySQL, Sequelize, express/express-sessions/express-handlebars.
 
+Screenshot: ![Site Screenshot](./images/Tech-Blog%20Screenshot.jpeg)
+
+Live Site: [Heroku](https://tech-blog-797.herokuapp.com/)
+
 ---
 
 ## Questions
