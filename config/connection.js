@@ -3,8 +3,9 @@ require('dotenv').config();
 
 let sequelize;
 
-if (process.env.MYSQL_URL) {
-  sequelize = new Sequelize(process.env.MYSQL_URL);
+// Connection to JAWSDB is no longer relevant, as Heroku deployment is no longer an option.
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
