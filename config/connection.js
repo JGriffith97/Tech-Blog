@@ -4,9 +4,9 @@ require('dotenv').config();
 let sequelize;
 
 // Connection to JAWSDB is no longer relevant, as Heroku deployment is no longer an option.
-// Is there a 
-if (process.env.DATABASE_URL) {
-  sequelize = new Sequelize(process.env.DATABASE_URL);
+// Is there an equivalent way to do this with Railway and their mySQL service?
+if (process.env.JAWSDB_URL) {
+  sequelize = new Sequelize(process.env.JAWSDB_URL);
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
