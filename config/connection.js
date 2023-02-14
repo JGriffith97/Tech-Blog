@@ -11,7 +11,7 @@ if (process.env.MYSQL_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      host: process.env.PORT,
+      host: 'localhost',
       dialect: 'mysql',
       port: 3306
     }
