@@ -22,3 +22,9 @@ if (process.env.MYSQL_URL) {
 }
 
 module.exports = sequelize;
+
+// VERY HELPFUL reference: https://gist.github.com/ajcwebdev/8599295373c092f30fce9968eaf48635
+// railway add > select mySQL
+// railway link > to active project
+// railway connect mysql to utilize mySQL in the CLI
+// railway run npm run seed to run the seed.js file.
