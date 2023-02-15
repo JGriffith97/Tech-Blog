@@ -3,13 +3,12 @@ require('dotenv').config();
 
 let sequelize;
 
-// if (process.env.JAWSDB_URL) {
-//  sequelize = new Sequelize(process.env.MYSQL_URL);
-// }
-
 // Connection to JAWSDB is no longer relevant, as Heroku deployment is no longer an option.
 // Is there an equivalent way to do this with Railway and their mySQL service? Turns out, yes
-if (process.env.MYSQL_URL) {
+
+if (process.env.JAWSDB_URL) {
+ sequelize = new Sequelize(process.env.JAWSDB_URL);
+} else if (process.env.MYSQL_URL) {
   // This is a provided env variable from Railway
   sequelize = new Sequelize(process.env.MYSQL_URL);
 } else {
